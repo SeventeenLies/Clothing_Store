@@ -6,7 +6,7 @@ import pandas
 
 st.title('Zena\'s Amazing Athleisure Catalog')
 
-my_cnx = snow.connector.connect(**streamlit.secrets["snowflake"])
+my_cnx = snow.connect(**st.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(),CURRENT_REGION()")
 my_data_row = my_cur.fetchone()
